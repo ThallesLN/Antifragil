@@ -1,7 +1,1 @@
-# Cria o arquivo de redirects para SPA no Netlify
-
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
-  force = true
+/*    /index.html   200
