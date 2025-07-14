@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Button } from '@/components/ui/button.jsx'
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from '@/components/ui/carousel.jsx'
 import { ChevronDown, Play, Users, Target, TrendingUp, Heart, Handshake, Brain, Star, CheckCircle, User, Calendar, MapPin, Award, Car, Users2, AlertTriangle, Utensils, Moon, Sun } from 'lucide-react'
-import { FaSquareInstagram } from 'react-icons/fa'
+import { FaInstagram } from 'react-icons/fa'
 import logoColorida from './assets/LOGOANTIFR├üGIL.png'
 import logoPreta from './assets/LOGOANTIFR├üGILPRETA.png'
 import grupoAntifragil from './assets/grupo-antifragil.jpg'
@@ -486,7 +486,7 @@ function App() {
                     aria-label="Instagram Elson Sousa"
                     className="inline-flex items-center text-amber-400 hover:text-pink-600 transition-colors duration-200"
                   >
-                    <FaSquareInstagram className="w-9 h-9" />
+                    <FaInstagram className="w-9 h-9" />
                   </a>
                 </h3>
               </div>
