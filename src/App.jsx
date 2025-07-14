@@ -1,9 +1,21 @@
 import { useState } from 'react'
 import { Button } from '@/components/ui/button.jsx'
+import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from '@/components/ui/carousel.jsx'
 import { ChevronDown, Play, Users, Target, TrendingUp, Heart, Handshake, Brain, Star, CheckCircle, User, Calendar, MapPin, Award, Car, Users2, AlertTriangle, Utensils, Moon, Sun } from 'lucide-react'
+import { FaSquareInstagram } from 'react-icons/fa6'
 import logoColorida from './assets/LOGOANTIFR├üGIL.png'
 import logoPreta from './assets/LOGOANTIFR├üGILPRETA.png'
 import grupoAntifragil from './assets/grupo-antifragil.jpg'
+import palestranteImg from './assets/palestrante.png'
+import elsonImg from './assets/elson.png'
+import img1 from './assets/1.png'
+import img2 from './assets/2.png'
+import img3 from './assets/3.png'
+import img4 from './assets/4.png'
+import img5 from './assets/5.png'
+import img6 from './assets/6.png'
+import img7 from './assets/7.png'
+import fundoFolhas from './assets/fundo-de-folhas-verdes-tropicais.svg'
 import './App.css'
 
 function App() {
@@ -16,23 +28,28 @@ function App() {
   const resultados = [
     {
       icon: <Brain className="w-12 h-12 text-amber-500" />,
-      title: "Desenvolva uma mentalidade antifrágil"
+      title: "Quebra de padrões limitantes inconscientes, que te sabotam nos seus resultados pessoais e profissionais",
+      step: "01"
     },
     {
       icon: <TrendingUp className="w-12 h-12 text-amber-500" />,
-      title: "Desperte seu potencial máximo para uma vida próspera"
+      title: "Clareza e direção para fazer seu dinheiro multiplicar com inteligência emocional",
+      step: "02"
     },
     {
       icon: <Target className="w-12 h-12 text-amber-500" />,
-      title: "Veja as adversidades como oportunidades de crescimento"
+      title: "Reconexão com seus valores e propósito de vida",
+      step: "03"
     },
     {
       icon: <Heart className="w-12 h-12 text-amber-500" />,
-      title: "Construa relações saudáveis pessoais, familiares e profissionais"
+      title: "Espaço seguro para desbloquear seu potencial em família, nos negócios e no amor",
+      step: "04"
     },
     {
       icon: <Handshake className="w-12 h-12 text-amber-500" />,
-      title: "Receba orientações para implementar o que aprendeu no Treinamento e obter Resultados duradouros"
+      title: "Técnicas práticas para liderança, performance e gestão de emoções",
+      step: "05"
     }
   ]
 
@@ -115,13 +132,25 @@ function App() {
         <div className="absolute inset-0 bg-gradient-to-r from-amber-500/5 to-orange-500/5"></div>
         <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center relative z-10">
           <div className="space-y-8">
-            <img src={logoColorida} alt="Antifrágil" className="h-16 w-auto" />
-            <div className="text-center mb-16">
-              <h1 className="text-2xl md:text-3xl lg:text-4xl font-light mb-6 leading-tight text-center">
-                Muitas pessoas sabem o que fazer e como fazer para mudar seus resultados, <span className="text-amber-500 font-medium">mas ainda assim se sentem bloqueadas.</span> Em dois dias de imersão profunda, você vai descobrir <span className="text-amber-500 font-medium">como superar essas barreiras e liberar o que há de melhor em você.</span>
+            <img src={logoColorida} alt="Antifrágil" className="h-16 lg:h-20 w-auto" />
+            {/* Foto do palestrante - mobile: acima do texto, desktop: ao lado */}
+            <div className="block lg:hidden w-80 h-80 sm:w-96 sm:h-96 mx-auto mb-6">
+              <img
+                src={palestranteImg}
+                alt="Foto do palestrante"
+                className="w-full h-full object-contain drop-shadow-xl"
+                style={{ background: 'transparent' }}
+              />
+            </div>
+            <div className="text-center lg:text-left mb-16">
+              <h1 className="text-2xl md:text-3xl lg:text-4xl font-light mb-6 leading-tight text-left">
+                <span className="text-amber-500 font-medium">Parece que a vida tá pegando pesado com você?</span><br />
+                São problemas que se repetem... relacionamentos desgastantes, grana travada, emocional no limite...<br />
+                <span className="text-amber-500 font-medium">Se você sente que tá sempre sendo testado, não é sinal de fraqueza.</span><br />
+                É a vida te chamando pra dar o próximo passo.
               </h1>
               <p className="text-lg md:text-xl text-gray-300 font-light mb-8 text-justify">
-                Descubra o que lhe impede de enfrentar e superar suas limitações de uma vez por todas
+                É o seu convite pra se tornar <span className="text-amber-500 font-medium">Antifrágil</span> — alguém que não apenas resiste, mas cresce com tudo isso.
               </p>
               {/* Caixa única de informações do evento - realocada */}
               <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-10">
@@ -133,7 +162,7 @@ function App() {
                       </svg>
                     </div>
                     <div className="text-left">
-                      <div className="text-lg font-semibold text-white">07 A 08 DE DEZEMBRO</div>
+                      <div className="text-lg font-semibold text-white">16 e 17 de AGOSTO</div>
                       <div className="text-sm text-gray-300">Salvador - BA</div>
                     </div>
                   </div>
@@ -153,9 +182,11 @@ function App() {
               </div>
             </div>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button className="bg-gradient-to-r from-amber-500 via-orange-500 to-amber-600 hover:from-amber-600 hover:via-orange-600 hover:to-amber-700 text-white text-base md:text-lg px-8 md:px-10 py-4 md:py-5 rounded-2xl font-semibold shadow-2xl hover:shadow-amber-500/25 transition-all duration-500 transform hover:scale-105 hover:-translate-y-1 border border-amber-400/20 backdrop-blur-sm">
-                GARANTA SUA VAGA!
-              </Button>
+              <a href="#elson-sousa">
+                <Button className="bg-gradient-to-r from-amber-500 via-orange-500 to-amber-600 hover:from-amber-600 hover:via-orange-600 hover:to-amber-700 text-white text-base md:text-lg px-8 md:px-10 py-4 md:py-5 rounded-2xl font-semibold shadow-2xl hover:shadow-amber-500/25 transition-all duration-500 transform hover:scale-105 hover:-translate-y-1 border border-amber-400/20 backdrop-blur-sm">
+                  GARANTA SUA VAGA!
+                </Button>
+              </a>
               <div className="flex items-center gap-2 text-amber-500">
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
@@ -164,16 +195,14 @@ function App() {
               </div>
             </div>
           </div>
-          <div className="flex justify-center">
-            {/* Espaço para foto do palestrante */}
-            <div className={`w-80 md:w-96 h-80 md:h-96 backdrop-blur-sm rounded-2xl border flex items-center justify-center ${
-              'bg-slate-800/50 border-slate-600/30'
-            }`}>
-              <div className="text-center text-gray-400">
-                <User className="w-24 h-24 mx-auto mb-4" />
-                <p className="font-light">Espaço para foto do palestrante</p>
-                <p className="text-sm text-gray-500">(fundo transparente)</p>
-              </div>
+          <div className="hidden lg:flex justify-center">
+            <div className="w-[600px] md:w-[750px] h-[600px] md:h-[750px] flex items-center justify-center bg-transparent">
+              <img
+                src={palestranteImg}
+                alt="Foto do palestrante"
+                className="w-full h-full object-contain drop-shadow-xl"
+                style={{ background: 'transparent' }}
+              />
             </div>
           </div>
         </div>
@@ -201,74 +230,121 @@ function App() {
             <h2 className="text-4xl lg:text-5xl font-light mb-8 text-slate-800">TREINAMENTO ANTIFRÁGIL</h2>
           </div>
           <div className="max-w-4xl mx-auto">
-            {/* Espaço para vídeo */}
-            <div className="aspect-video rounded-2xl border shadow-lg flex items-center justify-center bg-white border-slate-200">
-              <div className="text-center text-slate-500">
-                <Play className="w-24 h-24 mx-auto mb-4 text-amber-500" />
-                <p className="text-xl font-light">Espaço para vídeo do treinamento</p>
-                <p className="text-sm text-slate-400">Player integrado no site</p>
-              </div>
-            </div>
+          {/* Vídeo do Treinamento Antifrágil */}
+          <div className="aspect-video rounded-2xl border shadow-lg flex items-center justify-center bg-white border-slate-200 overflow-hidden">
+            <iframe
+              width="100%"
+              height="100%"
+              src="https://www.youtube.com/embed/g3ejC4TEyYk"
+              title="Treinamento Antifrágil"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+              className="w-full h-full"
+            ></iframe>
+          </div>
           </div>
         </div>
       </section>
 
-      {/* Resultados Section */}
+      {/* Resultados Section - Timeline Vertical */}
+
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <div className="w-16 h-1 bg-gradient-to-r from-amber-500 to-orange-500 mx-auto mb-8 rounded-full"></div>
-            <h2 className={`text-4xl lg:text-5xl font-light mb-8 ${
-              'text-slate-800'
-            }`}>RESULTADOS QUE VOCÊ PODE ESPERAR</h2>
-            <p className={`text-xl max-w-4xl mx-auto font-light ${
-              'text-slate-600'
-            }`}>
+            <h2 className="text-4xl lg:text-5xl font-light mb-8 text-slate-800">
+              RESULTADOS QUE VOCÊ PODE ESPERAR
+            </h2>
+            <p className="text-xl max-w-4xl mx-auto font-light text-slate-600">
               Este treinamento é para quem deseja <span className="text-amber-500 font-medium">escalar o seu negócio
               de forma sustentável e consciente...</span> para quem quer ser <span className="text-amber-500 font-medium">líder
               do seu mercado.</span>
             </p>
           </div>
-          <div className="max-w-6xl mx-auto">
-            {/* Primeiras 3 caixas */}
-            <div className="grid md:grid-cols-3 gap-8 mb-8">
-              {resultados.slice(0, 3).map((resultado, index) => (
-                <div key={index} className={`p-8 rounded-2xl border text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1 ${
-                  'bg-gradient-to-br from-slate-50 to-blue-50 border-slate-200'
-                }`}>
-                  <div className="mb-6 flex justify-center">
-                    {resultado.icon}
-                  </div>
-                  <h3 className={`text-lg font-medium ${
-                    'text-slate-800'
-                  }`}>{resultado.title}</h3>
-                </div>
-              ))}
-            </div>
-            {/* Últimas 2 caixas centralizadas */}
-            <div className="flex justify-center">
-              <div className="grid md:grid-cols-2 gap-8 max-w-2xl">
-                {resultados.slice(3).map((resultado, index) => (
-                  <div key={index + 3} className={`p-8 rounded-2xl border text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1 ${
-                    'bg-gradient-to-br from-slate-50 to-blue-50 border-slate-200'
-                  }`}>
-                    <div className="mb-6 flex justify-center">
-                      {resultado.icon}
+
+          {/* Timeline Alternada Desktop */}
+          <div className="hidden lg:block max-w-4xl mx-auto">
+            <div className="relative">
+              {/* Linha central da timeline */}
+              <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-amber-500 via-orange-500 to-amber-600 rounded-full"></div>
+              <div className="space-y-16">
+                {resultados.map((resultado, index) => (
+                  <div key={index} className={`relative flex items-center ${index % 2 === 0 ? 'justify-start' : 'justify-end'}`}>
+                    {/* Conector circular */}
+                    <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-gradient-to-br from-amber-500 to-orange-500 rounded-full border-4 border-white shadow-lg z-10"></div>
+                    {/* Card do resultado */}
+                    <div className={`w-5/12 ${index % 2 === 0 ? 'pr-8' : 'pl-8'}`}> 
+                      <div className="relative">
+                        {/* Linha conectora */}
+                        <div className={`absolute top-1/2 transform -translate-y-1/2 w-8 h-0.5 bg-gradient-to-r from-amber-500 to-orange-500 ${index % 2 === 0 ? 'right-0' : 'left-0'}`}></div>
+                        {/* Card */}
+                        <div className={`p-8 rounded-2xl border bg-gradient-to-br from-slate-50 to-blue-50 border-slate-200 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 ${index % 2 === 0 ? 'mr-8' : 'ml-8'}`}> 
+                          {/* Ícone */}
+                          <div className="mb-6 flex justify-center">
+                            {resultado.icon}
+                          </div>
+                          {/* Título completo */}
+                          <h3 className="text-lg font-medium text-slate-800 text-center leading-relaxed">
+                            {resultado.title}
+                          </h3>
+                        </div>
+                      </div>
                     </div>
-                    <h3 className={`text-lg font-medium ${
-                      'text-slate-800'
-                    }`}>{resultado.title}</h3>
                   </div>
                 ))}
               </div>
+            </div>
+          </div>
+
+          {/* Timeline Vertical - Mobile */}
+          <div className="lg:hidden max-w-2xl mx-auto">
+            <div className="relative">
+              {/* Linha vertical */}
+              <div className="absolute left-8 top-0 w-1 h-full bg-gradient-to-b from-amber-500 via-orange-500 to-amber-600 rounded-full"></div>
+              <div className="space-y-8">
+                {resultados.map((resultado, index) => (
+                  <div key={index} className="relative flex items-start">
+                    {/* Conector */}
+                    <div className="w-6 h-6 bg-gradient-to-br from-amber-500 to-orange-500 rounded-full border-4 border-white shadow-lg z-10 mt-8"></div>
+                    {/* Card */}
+                    <div className="ml-8 flex-1">
+                      <div className="p-6 rounded-2xl border bg-gradient-to-br from-slate-50 to-blue-50 border-slate-200 hover:shadow-lg transition-all duration-300">
+                        {/* Ícone */}
+                        <div className="mb-4 flex justify-center">
+                          {resultado.icon}
+                        </div>
+                        {/* Título completo */}
+                        <h3 className="text-base font-medium text-slate-800 text-center leading-relaxed">
+                          {resultado.title}
+                        </h3>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Call to Action */}
+          <div className="mt-16 text-center">
+            <div className="inline-flex items-center space-x-3 px-8 py-4 bg-gradient-to-r from-amber-50 to-orange-50 rounded-2xl border border-amber-200">
+              <div className="w-4 h-4 bg-gradient-to-br from-amber-500 to-orange-500 rounded-full animate-pulse"></div>
+              <span className="text-amber-700 font-medium">Esse não é um curso. É um recomeço.</span>
+              <div className="w-4 h-4 bg-gradient-to-br from-amber-500 to-orange-500 rounded-full animate-pulse delay-500"></div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Método C.I.M. Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-800 via-slate-800 to-gray-900">
-        <div className="container mx-auto px-6">
+      <section className="py-20 relative">
+        {/* Fundo de folhas verdes */}
+        <div className="absolute inset-0 w-full h-full z-0">
+          <img src={fundoFolhas} alt="Folhas tropicais" className="w-full h-full object-cover object-center" style={{filter: 'brightness(1.05)'}} />
+          <div className="absolute inset-0 bg-gradient-to-br from-gray-800 via-slate-800 to-gray-900 opacity-90"></div>
+        </div>
+        <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-16">
             <div className="w-16 h-1 bg-gradient-to-r from-amber-500 to-orange-500 mx-auto mb-8 rounded-full"></div>
             <h2 className={`text-4xl lg:text-5xl font-light mb-8 ${
@@ -294,30 +370,35 @@ function App() {
                 <p className={`leading-relaxed font-light ${
                   'text-slate-600'
                 }`}>{item.description}</p>
-                {/* Espaço para imagem */}
-                <div className={`w-full h-48 rounded-2xl border shadow-sm flex items-center justify-center ${
-                  'bg-white border-slate-200'
-                }`}>
-                  <div className={`text-center ${
-                    'text-slate-400'
-                  }`}>
-                    <div className={`w-16 h-16 rounded-xl mx-auto mb-2 ${
-                      'bg-slate-100'
-                    }`}></div>
-                    <p className="text-sm font-light">Espaço para imagem</p>
-                  </div>
-                </div>
               </div>
             ))}
+          </div>
+
+          {/* Bloco de alerta - Se você NÃO estiver lá... */}
+          <div className="max-w-3xl mx-auto mb-12">
+            <div className="bg-white border border-amber-200 rounded-2xl p-8 shadow-lg">
+              <h4 className="text-2xl font-bold text-amber-500 mb-4 text-center tracking-tight">
+                Se você <span className="text-amber-500 font-extrabold">NÃO</span> estiver lá…
+              </h4>
+              <ul className="space-y-3 text-lg font-light pl-0">
+                <li className="flex items-start gap-3"><span className="mt-2 w-3 h-3 rounded-full bg-amber-500 inline-block flex-shrink-0"></span><span className="text-slate-700">Vai continuar lutando no escuro, sem saber o que realmente te trava.</span></li>
+                <li className="flex items-start gap-3"><span className="mt-2 w-3 h-3 rounded-full bg-amber-500 inline-block flex-shrink-0"></span><span className="text-slate-700">Viver no automático, sufocado(a) pela rotina e pelas pressões.</span></li>
+                <li className="flex items-start gap-3"><span className="mt-2 w-3 h-3 rounded-full bg-amber-500 inline-block flex-shrink-0"></span><span className="text-slate-700">Repetir os mesmos erros e colher os mesmos resultados frustrantes.</span></li>
+                <li className="flex items-start gap-3"><span className="mt-2 w-3 h-3 rounded-full bg-amber-500 inline-block flex-shrink-0"></span><span className="text-slate-700">Perder a chance real de romper esse ciclo e crescer com consistência.</span></li>
+                <li className="flex items-start gap-3"><span className="mt-2 w-3 h-3 rounded-full bg-amber-500 inline-block flex-shrink-0"></span><span className="text-slate-700">E seguir distante da vida leve, consciente e poderosa que merece viver.</span></li>
+              </ul>
+            </div>
           </div>
 
           <div className="text-center">
             <p className="text-xl text-amber-500 font-medium mb-8">
               Prepare-se para uma experiência incrível que te ajudará a superar todos os obstáculos no caminho do seu crescimento pessoal e profissional.
             </p>
-            <Button className="bg-gradient-to-r from-amber-500 via-orange-500 to-amber-600 hover:from-amber-600 hover:via-orange-600 hover:to-amber-700 text-white text-lg px-10 py-5 rounded-2xl font-semibold shadow-2xl hover:shadow-amber-500/25 transition-all duration-500 transform hover:scale-105 hover:-translate-y-1 border border-amber-400/20 backdrop-blur-sm">
-              GARANTA SUA VAGA!
-            </Button>
+            <a href="#elson-sousa">
+              <Button className="bg-gradient-to-r from-amber-500 via-orange-500 to-amber-600 hover:from-amber-600 hover:via-orange-600 hover:to-amber-700 text-white text-lg px-10 py-5 rounded-2xl font-semibold shadow-2xl hover:shadow-amber-500/25 transition-all duration-500 transform hover:scale-105 hover:-translate-y-1 border border-amber-400/20 backdrop-blur-sm">
+                GARANTA SUA VAGA!
+              </Button>
+            </a>
           </div>
         </div>
       </section>
@@ -330,54 +411,59 @@ function App() {
               VEJA O DEPOIMENTO DE QUEM PARTICIPOU
             </h2>
           </div>
-          {/* Vídeo do YouTube */}
+          {/* Vídeo do YouTube - Depoimento */}
           <div className="max-w-4xl mx-auto mb-16">
-            <div className="aspect-video rounded-2xl border shadow-lg flex items-center justify-center bg-white border-slate-200">
-              <div className="text-center text-slate-500">
-                <Play className="w-24 h-24 mx-auto mb-4 text-amber-500" />
-                <p className="text-xl font-light">Player do YouTube</p>
-                <p className="text-sm text-slate-400">Vídeo de depoimentos</p>
-              </div>
+            <div className="aspect-video rounded-2xl border shadow-lg flex items-center justify-center bg-white border-slate-200 overflow-hidden">
+              <iframe
+                width="100%"
+                height="100%"
+                src="https://www.youtube.com/embed/ZrH6gvxAeO8?start=2"
+                title="Depoimento de quem participou"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+                className="w-full h-full"
+              ></iframe>
             </div>
           </div>
 
-          {/* Carrossel de Imagens */}
-          <div className="mb-16">
-            <div className="flex space-x-4 overflow-x-auto pb-4 scrollbar-hide">
-              {[1, 2, 3, 4].map((i) => (
-                <div key={i} className={`flex-shrink-0 w-64 h-48 rounded-2xl border shadow-sm flex items-center justify-center ${
-                  'bg-white border-slate-200'
-                }`}>
-                  <div className={`text-center ${
-                    'text-slate-400'
-                  }`}>
-                    <div className={`w-16 h-16 rounded-xl mx-auto mb-2 ${
-                      'bg-slate-100'
-                    }`}></div>
-                    <p className="text-sm font-light">Imagem {i}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
+          {/* Carrossel de Imagens - shadcn */}
+          <div className="mb-16 max-w-3xl mx-auto">
+            <Carousel className="relative">
+              <CarouselContent>
+                {[img1, img2, img3, img4, img5, img6, img7].map((img, idx) => (
+                  <CarouselItem key={idx} className="flex items-center justify-center">
+                    <div className="w-full max-w-xl aspect-[16/9] bg-white border border-slate-200 rounded-2xl shadow-sm overflow-hidden flex items-center justify-center">
+                      <img
+                        src={img}
+                        alt={`Depoimento ${idx + 1}`}
+                        className="w-full h-full object-contain object-center"
+                        style={{ display: 'block', background: '#fff' }}
+                      />
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="-left-6 text-amber-500 hover:text-orange-600" />
+              <CarouselNext className="-right-6 text-amber-500 hover:text-orange-600" />
+            </Carousel>
           </div>
 
-          {/* DEIXA EU TE ENTREGAR ESSA CHAVE */}
+          {/* Depoimentos - Texto novo */}
           <div className="text-center max-w-4xl mx-auto">
             <h3 className="text-3xl lg:text-4xl font-light text-amber-500 mb-8">
-              DEIXA EU TE ENTREGAR ESSA CHAVE!
+              CENTENAS DE PESSOAS JÁ PASSARAM POR ESSA JORNADA. E hoje, elas relatam:
             </h3>
-            <div className="space-y-6 text-lg font-light text-justify text-slate-600">
-              <p className="font-medium text-slate-800">
-                Não é esforço e nem força de vontade que vai fazer você mudar o jogo da sua vida.
-              </p>
-              <p>
-                Talvez você possa estar andando em círculos sem sair do lugar, tentando várias formas sem achar uma saída para suas dificuldades.
-              </p>
-              <p>
-                O que você faria se eu te dissesse que existe uma maneira de enfrentar e se fortalecer diante desses desafios? É exatamente isso que o Treinamento vai te oferecer!
-              </p>
-              <p>
-                O ANTIFRÁGIL é uma imersão intensiva e profunda de dois dias que irá revolucionar sua mentalidade para enfrentar as pressões da vida. <span className="text-amber-500 font-medium">Você vai aprender e vivenciar ferramentas e estratégias comprovadas para se adaptar, crescer e prosperar em momentos de crises e incertezas.</span>
+            <div className="space-y-4 text-xl font-light text-justify text-slate-600">
+              <div>
+                <div className="mb-2">Aumento exponencial da qualidade financeira em seus negócios</div>
+                <div className="mb-2">Reconciliações familiares e relacionamentos transformados</div>
+                <div className="mb-2">Transições de carreira seguras, prósperas e sem arrependimentos</div>
+                <div className="mb-2">Segurança emocional em momentos difíceis</div>
+                <div className="mb-2">Coragem para tomar decisões antes impensáveis</div>
+              </div>
+              <p className="mt-8">
+                <span className="font-semibold text-amber-500">Essa não é só mais uma imersão.</span> É a oportunidade de virar o jogo de dentro pra fora. De parar de sobreviver e começar a viver com consciência, clareza e força emocional.
               </p>
             </div>
           </div>
@@ -385,13 +471,24 @@ function App() {
       </section>
 
       {/* Conheça o Treinador Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-900 via-slate-900 to-black">
+      <section id="elson-sousa" className="py-20 bg-gradient-to-br from-gray-900 via-slate-900 to-black">
         <div className="container mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
             <div className="space-y-8">
               <div>
                 <h2 className="text-2xl text-gray-300 mb-4 font-light">CONHEÇA O SEU TREINADOR</h2>
-                <h3 className="text-4xl lg:text-5xl font-light text-amber-400">ELSON SOUSA</h3>
+                <h3 className="text-4xl lg:text-5xl font-light text-amber-400 flex items-center gap-3">
+                  ELSON SOUSA
+                  <a
+                    href="https://www.instagram.com/elsonsousaoficial/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Instagram Elson Sousa"
+                    className="inline-flex items-center text-amber-400 hover:text-pink-600 transition-colors duration-200"
+                  >
+                    <FaSquareInstagram className="w-9 h-9" />
+                  </a>
+                </h3>
               </div>
               <div className="space-y-6 text-lg text-gray-300 font-light">
                 <p>
@@ -400,27 +497,34 @@ function App() {
                 <p>
                   Elson construiu a metodologia capaz de ajudar você a superar desafios, conquistar metas e trilhar o caminho da antifragilidade para o sucesso!
                 </p>
-                <Button className="bg-gradient-to-r from-amber-500 via-orange-500 to-amber-600 hover:from-amber-600 hover:via-orange-600 hover:to-amber-700 text-white text-lg px-10 py-5 rounded-2xl font-semibold shadow-2xl hover:shadow-amber-500/25 transition-all duration-500 transform hover:scale-105 hover:-translate-y-1 border border-amber-400/20 backdrop-blur-sm">
-                  GARANTA SUA VAGA!
-                </Button>
+                {/* Imagem do Elson - mobile: mostrar entre, desktop: mostrar ao lado */}
+                <div className="block lg:hidden w-full flex justify-center">
+                  <img src={elsonImg} alt="Elson Sousa" className="w-96 h-96 rounded-2xl object-cover object-center shadow-2xl mb-2" />
+                </div>
+                <a
+                  href="https://wa.me/5571997068858"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button className="bg-gradient-to-r from-amber-500 via-orange-500 to-amber-600 hover:from-amber-600 hover:via-orange-600 hover:to-amber-700 text-white text-lg px-10 py-5 rounded-2xl font-semibold shadow-2xl hover:shadow-amber-500/25 transition-all duration-500 transform hover:scale-105 hover:-translate-y-1 border border-amber-400/20 backdrop-blur-sm">
+                    Quero ser antifrágil
+                  </Button>
+                </a>
               </div>
             </div>
-            <div className="flex justify-center items-center lg:justify-end">
-              {/* Espaço para foto do treinador */}
-              <div className="w-96 h-96 backdrop-blur-sm rounded-2xl border flex items-center justify-center bg-slate-700/50 border-slate-600/30">
-                <div className="text-center text-gray-400">
-                  <User className="w-24 h-24 mx-auto mb-4" />
-                  <p className="font-light">Foto do Elson Sousa</p>
-                </div>
-              </div>
+            <div className="hidden lg:flex justify-center items-center lg:justify-end">
+              {/* Foto real do Elson Sousa - sem caixa, maior */}
+              <img src={elsonImg} alt="Elson Sousa" className="w-[520px] h-[520px] rounded-2xl object-cover object-center shadow-2xl" />
             </div>
           </div>
         </div>
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 bg-gradient-to-br from-slate-100 via-blue-100 to-slate-50">
-        <div className="container mx-auto px-6">
+      <section className="py-20 relative">
+        {/* Fundo de folhas removido, apenas overlay de cor */}
+        <div className="absolute inset-0 w-full h-full z-0 bg-slate-50"></div>
+        <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-16">
             <div className="w-16 h-1 bg-gradient-to-r from-amber-500 to-orange-500 mx-auto mb-8 rounded-full"></div>
             <h2 className="text-4xl lg:text-5xl font-light text-amber-600">PERGUNTAS FREQUENTES</h2>
@@ -475,9 +579,15 @@ function App() {
           }`}>
             Nossa equipe está pronta para esclarecer todas as suas dúvidas sobre o Treinamento Antifrágil.
           </p>
-          <Button className="bg-gradient-to-r from-slate-600 via-gray-700 to-slate-800 hover:from-slate-700 hover:via-gray-800 hover:to-slate-900 text-white text-lg px-10 py-5 rounded-2xl font-semibold shadow-2xl hover:shadow-slate-500/25 transition-all duration-500 transform hover:scale-105 hover:-translate-y-1 border border-slate-400/20 backdrop-blur-sm">
-            FALAR COM SUPORTE
-          </Button>
+          <a
+            href="https://wa.me/5571997068858"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button className="bg-gradient-to-r from-slate-600 via-gray-700 to-slate-800 hover:from-slate-700 hover:via-gray-800 hover:to-slate-900 text-white text-lg px-10 py-5 rounded-2xl font-semibold shadow-2xl hover:shadow-slate-500/25 transition-all duration-500 transform hover:scale-105 hover:-translate-y-1 border border-slate-400/20 backdrop-blur-sm">
+              FALAR COM SUPORTE
+            </Button>
+          </a>
         </div>
       </section>
 
