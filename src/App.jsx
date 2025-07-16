@@ -6,8 +6,8 @@ import { FaInstagram } from 'react-icons/fa'
 import logoColorida from './assets/LOGOANTIFR├üGIL.png'
 import logoPreta from './assets/LOGOANTIFR├üGILPRETA.png'
 import grupoAntifragil from './assets/grupo-antifragil.jpg'
-import palestranteImg from './assets/palestrante.png'
-import elsonImg from './assets/elson.png'
+import palestranteImg from './assets/foto-elson-hero.png'
+import elsonImg from './assets/foto-elson-perfil.png'
 import img1 from './assets/1.png'
 import img2 from './assets/2.png'
 import img3 from './assets/3.png'
@@ -82,7 +82,7 @@ function App() {
     },
     {
       question: "Qual o dia, hora e local do Evento?",
-      answer: "O treinamento será realizado nos dia 07 e 08 de dezembro de 2024, Auditório da ABASE, na Rua Gilberto Amado, 276, Jardim Armação - Salvador - Bahia. Dia 07/12/2024 (sábado) - início às 08h e término às 20h. Dia 08/12/2024 (domingo) - início às 09h e término às 18h"
+      answer: "O treinamento será realizado nos dia 16 e 17 de AGOSTO de 2025, Auditório da ABASE, na Rua Gilberto Amado, 276, Jardim Armação - Salvador - Bahia. Dia 16/08/2025 (sábado) - Início às 08h e término às 20h. Dia 17/08/2025 (domingo) - início às 09h e término às 18h."
     },
     {
       question: "O Evento irá oferecer certificado?",
@@ -134,11 +134,11 @@ function App() {
           <div className="space-y-8">
             <img src={logoColorida} alt="Antifrágil" className="h-16 lg:h-20 w-auto" />
             {/* Foto do palestrante - mobile: acima do texto, desktop: ao lado */}
-            <div className="block lg:hidden w-80 h-80 sm:w-96 sm:h-96 mx-auto mb-6">
+            <div className="block lg:hidden max-w-[100vw] max-h-[90vh] mb-6 flex justify-center items-start p-0">
               <img
                 src={palestranteImg}
                 alt="Foto do palestrante"
-                className="w-full h-full object-contain drop-shadow-xl"
+                className="w-[85vw] h-[42vh] max-w-none max-h-none object-contain drop-shadow-2xl"
                 style={{ background: 'transparent' }}
               />
             </div>
@@ -154,8 +154,8 @@ function App() {
               </p>
               {/* Caixa única de informações do evento - realocada */}
               <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-10">
-                <div className="flex flex-col sm:flex-row items-center gap-6 px-8 py-5 rounded-2xl bg-white/10 border border-white/20 backdrop-blur-sm shadow-lg">
-                  <div className="flex items-center gap-4">
+                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 px-8 py-5 rounded-2xl bg-white/10 border border-slate-300 backdrop-blur-sm shadow-lg">
+                  <div className="flex items-start gap-4">
                     <div className="w-12 h-12 bg-amber-500 rounded-lg flex items-center justify-center">
                       <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
@@ -182,11 +182,15 @@ function App() {
               </div>
             </div>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <a href="#elson-sousa">
-                <Button className="bg-gradient-to-r from-amber-500 via-orange-500 to-amber-600 hover:from-amber-600 hover:via-orange-600 hover:to-amber-700 text-white text-base md:text-lg px-8 md:px-10 py-4 md:py-5 rounded-2xl font-semibold shadow-2xl hover:shadow-amber-500/25 transition-all duration-500 transform hover:scale-105 hover:-translate-y-1 border border-amber-400/20 backdrop-blur-sm">
-                  GARANTA SUA VAGA!
-                </Button>
-              </a>
+                <a
+                  href="https://wa.me/5571997068858?text=Quero%20me%20tornar%20Antifr%C3%A1gil%21"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button className="bg-gradient-to-r from-amber-500 via-orange-500 to-amber-600 hover:from-amber-600 hover:via-orange-600 hover:to-amber-700 text-white text-base md:text-lg px-8 md:px-10 py-4 md:py-5 rounded-2xl font-semibold shadow-2xl hover:shadow-amber-500/25 transition-all duration-500 transform hover:scale-105 hover:-translate-y-1 border border-amber-400/20 backdrop-blur-sm">
+                    GARANTA SUA VAGA!
+                  </Button>
+                </a>
               <div className="flex items-center gap-2 text-amber-500">
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
@@ -195,16 +199,18 @@ function App() {
               </div>
             </div>
           </div>
-          <div className="hidden lg:flex justify-center">
-            <div className="w-[600px] md:w-[750px] h-[600px] md:h-[750px] flex items-center justify-center bg-transparent">
-              <img
-                src={palestranteImg}
-                alt="Foto do palestrante"
-                className="w-full h-full object-contain drop-shadow-xl"
-                style={{ background: 'transparent' }}
-              />
+            <div className="hidden lg:flex items-end justify-end w-full h-full p-0 m-0">
+              <div className="w-full h-full flex items-start justify-end bg-transparent p-0 m-0">
+                <div className="ml-auto w-[38vw] h-[55vh] flex items-start justify-end">
+                  <img
+                    src={palestranteImg}
+                    alt="Foto do palestrante"
+                    className="w-full h-full max-w-none max-h-none object-contain drop-shadow-2xl"
+                    style={{ background: 'transparent', display: 'block' }}
+                  />
+                </div>
+              </div>
             </div>
-          </div>
         </div>
       </section>
 
@@ -227,7 +233,7 @@ function App() {
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <div className="w-16 h-1 bg-gradient-to-r from-amber-500 to-orange-500 mx-auto mb-8 rounded-full"></div>
-            <h2 className="text-4xl lg:text-5xl font-light mb-8 text-slate-800">TREINAMENTO ANTIFRÁGIL</h2>
+            <h2 className="text-4xl lg:text-5xl font-light mb-8 text-slate-800">TREINAMENTO <span className="whitespace-nowrap"><span className="text-amber-500 font-normal">0</span>&nbsp;ANTIFRÁGIL</span></h2>
           </div>
           <div className="max-w-4xl mx-auto">
           {/* Vídeo do Treinamento Antifrágil */}
@@ -342,19 +348,17 @@ function App() {
         {/* Fundo de folhas verdes */}
         <div className="absolute inset-0 w-full h-full z-0">
           <img src={fundoFolhas} alt="Folhas tropicais" className="w-full h-full object-cover object-center" style={{filter: 'brightness(1.05)'}} />
-          <div className="absolute inset-0 bg-gradient-to-br from-gray-800 via-slate-800 to-gray-900 opacity-90"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-gray-800 via-slate-800 to-gray-900 opacity-70"></div>
         </div>
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-16">
             <div className="w-16 h-1 bg-gradient-to-r from-amber-500 to-orange-500 mx-auto mb-8 rounded-full"></div>
-            <h2 className={`text-4xl lg:text-5xl font-light mb-8 ${
-              'text-slate-800'
-            }`}>
+            <h2 className={`text-4xl lg:text-5xl font-light mb-8 text-white`}>
               Método C.I.M.: <br />
               <span className="text-amber-500 font-medium">Estratégias Exclusivas e Comprovadas</span>
             </h2>
             <p className={`text-xl max-w-4xl mx-auto font-light ${
-              'text-slate-600'
+              'text-white'
             }`}>
               O método C.I.M. é a base metodológica do Treinamento o ANTIFRÁGIL. Ele possui 3 dimensões: Capacidade, Identidade e Merecimento.
             </p>
@@ -367,9 +371,7 @@ function App() {
                   {item.icon}
                 </div>
                 <h3 className="text-2xl font-medium text-amber-500">{item.title}</h3>
-                <p className={`leading-relaxed font-light ${
-                  'text-slate-600'
-                }`}>{item.description}</p>
+                <p className="leading-relaxed font-light text-white">{item.description}</p>
               </div>
             ))}
           </div>
@@ -394,11 +396,15 @@ function App() {
             <p className="text-xl text-amber-500 font-medium mb-8">
               Prepare-se para uma experiência incrível que te ajudará a superar todos os obstáculos no caminho do seu crescimento pessoal e profissional.
             </p>
-            <a href="#elson-sousa">
-              <Button className="bg-gradient-to-r from-amber-500 via-orange-500 to-amber-600 hover:from-amber-600 hover:via-orange-600 hover:to-amber-700 text-white text-lg px-10 py-5 rounded-2xl font-semibold shadow-2xl hover:shadow-amber-500/25 transition-all duration-500 transform hover:scale-105 hover:-translate-y-1 border border-amber-400/20 backdrop-blur-sm">
-                GARANTA SUA VAGA!
-              </Button>
-            </a>
+              <a
+                href="https://wa.me/5571997068858?text=Quero%20me%20tornar%20Antifr%C3%A1gil%21"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button className="bg-gradient-to-r from-amber-500 via-orange-500 to-amber-600 hover:from-amber-600 hover:via-orange-600 hover:to-amber-700 text-white text-lg px-10 py-5 rounded-2xl font-semibold shadow-2xl hover:shadow-amber-500/25 transition-all duration-500 transform hover:scale-105 hover:-translate-y-1 border border-amber-400/20 backdrop-blur-sm">
+                  GARANTA SUA VAGA!
+                </Button>
+              </a>
           </div>
         </div>
       </section>
@@ -456,11 +462,11 @@ function App() {
             </h3>
             <div className="space-y-4 text-xl font-light text-justify text-slate-600">
               <div>
-                <div className="mb-2">Aumento exponencial da qualidade financeira em seus negócios</div>
-                <div className="mb-2">Reconciliações familiares e relacionamentos transformados</div>
-                <div className="mb-2">Transições de carreira seguras, prósperas e sem arrependimentos</div>
-                <div className="mb-2">Segurança emocional em momentos difíceis</div>
-                <div className="mb-2">Coragem para tomar decisões antes impensáveis</div>
+                <div className="mb-2">• Aumento exponencial da <span className="text-amber-500 font-medium">qualidade financeira</span> em seus negócios</div>
+                <div className="mb-2">• <span className="text-amber-500 font-medium">Reconciliações</span> familiares e relacionamentos transformados</div>
+                <div className="mb-2">• <span className="text-amber-500 font-medium">Transições de carreira</span> seguras, prósperas e sem arrependimentos</div>
+                <div className="mb-2">• <span className="text-amber-500 font-medium">Segurança emocional</span> em momentos difíceis</div>
+                <div className="mb-2">• <span className="text-amber-500 font-medium">Coragem</span> para tomar decisões antes impensáveis</div>
               </div>
               <p className="mt-8">
                 <span className="font-semibold text-amber-500">Essa não é só mais uma imersão.</span> É a oportunidade de virar o jogo de dentro pra fora. De parar de sobreviver e começar a viver com consciência, clareza e força emocional.
@@ -502,7 +508,7 @@ function App() {
                   <img src={elsonImg} alt="Elson Sousa" className="w-96 h-96 rounded-2xl object-cover object-center shadow-2xl mb-2" />
                 </div>
                 <a
-                  href="https://wa.me/5571997068858"
+                href="https://wa.me/5571997068858?text=Quero%20me%20tornar%20Antifr%C3%A1gil%21"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -580,7 +586,7 @@ function App() {
             Nossa equipe está pronta para esclarecer todas as suas dúvidas sobre o Treinamento Antifrágil.
           </p>
           <a
-            href="https://wa.me/5571997068858"
+            href="https://wa.me/5571997068858?text=Quero%20me%20tornar%20Antifr%C3%A1gil%21"
             target="_blank"
             rel="noopener noreferrer"
           >

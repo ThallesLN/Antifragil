@@ -4,6 +4,7 @@ import { ChevronDown, Play, Users, Target, TrendingUp, Heart, Handshake, Brain, 
 import logoColorida from './assets/LOGOANTIFR├üGIL.png'
 import logoPreta from './assets/LOGOANTIFR├üGILPRETA.png'
 import grupoAntifragil from './assets/grupo-antifragil.jpg'
+import palestranteImg from './assets/foto-elson-hero.png'
 import './App.css'
 
 function App() {
@@ -165,15 +166,13 @@ function App() {
             </div>
           </div>
           <div className="flex justify-center">
-            {/* Espaço para foto do palestrante */}
-            <div className={`w-80 md:w-96 h-80 md:h-96 backdrop-blur-sm rounded-2xl border flex items-center justify-center ${
-              'bg-slate-800/50 border-slate-600/30'
-            }`}>
-              <div className="text-center text-gray-400">
-                <User className="w-24 h-24 mx-auto mb-4" />
-                <p className="font-light">Espaço para foto do palestrante</p>
-                <p className="text-sm text-gray-500">(fundo transparente)</p>
-              </div>
+            <div className="w-full flex justify-center items-center">
+              <img
+                src={palestranteImg}
+                alt="Foto do palestrante"
+                className="w-full h-auto rounded-2xl object-contain drop-shadow-2xl border-4 border-amber-500 bg-white/10 max-w-[600px] md:max-w-[800px] lg:max-w-[1100px] xl:max-w-[1400px] max-h-[90vh]"
+                style={{ background: 'transparent' }}
+              />
             </div>
           </div>
         </div>
@@ -367,6 +366,13 @@ function App() {
               DEIXA EU TE ENTREGAR ESSA CHAVE!
             </h3>
             <div className="space-y-6 text-lg font-light text-justify text-slate-600">
+              <div>
+                <div className="mb-2">• Aumento exponencial da <span className="text-amber-500 font-medium">qualidade financeira</span> em seus negócios</div>
+                <div className="mb-2">• <span className="text-amber-500 font-medium">Reconciliações</span> familiares e relacionamentos transformados</div>
+                <div className="mb-2">• <span className="text-amber-500 font-medium">Transições de carreira</span> seguras, prósperas e sem arrependimentos</div>
+                <div className="mb-2">• <span className="text-amber-500 font-medium">Segurança emocional</span> em momentos difíceis</div>
+                <div className="mb-2">• <span className="text-amber-500 font-medium">Coragem</span> para tomar decisões antes impensáveis</div>
+              </div>
               <p className="font-medium text-slate-800">
                 Não é esforço e nem força de vontade que vai fazer você mudar o jogo da sua vida.
               </p>
